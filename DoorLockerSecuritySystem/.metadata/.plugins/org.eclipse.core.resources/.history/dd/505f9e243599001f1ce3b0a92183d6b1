@@ -1,0 +1,33 @@
+/*
+ * pir.h
+ *
+ *  Created on: 2 Nov 2024
+ *      Author: NARIMAN AHMED
+ */
+
+#ifndef PIR_H_
+#define PIR_H_
+
+#include "std_types.h"
+
+/*******************************************************************************
+ *                      Function Prototypes                                    *
+ *******************************************************************************/
+
+/**
+ * @brief Initializes the PIR sensor by configuring the necessary I/O pin.
+ *
+ * @param None
+ * @return None
+ */
+void PIR_init(void);
+
+/**
+ * @brief Gets the current state of the PIR sensor (motion detected or not).
+ *
+ * @param None
+ * @return uint8 - The state of the PIR sensor (1 if motion detected, 0 otherwise).
+ */
+uint8 PIR_getState(void);
+
+#endif /* PIR_H_ */

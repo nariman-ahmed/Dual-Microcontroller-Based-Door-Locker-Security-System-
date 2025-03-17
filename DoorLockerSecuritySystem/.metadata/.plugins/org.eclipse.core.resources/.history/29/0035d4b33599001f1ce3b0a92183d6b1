@@ -1,0 +1,34 @@
+/*
+ * pir.c
+ *
+ *  Created on: 2 Nov 2024
+ *      Author: NARIMAN AHMED
+ */
+#include "pir.h"
+#include "gpio.h"
+
+/*******************************************************************************
+ *                      Functions Definitions                                  *
+ *******************************************************************************/
+
+void PIR_init(void)
+{
+    /* Configure the PIR sensor pin as input (assuming it's connected to PORTD Pin 2) */
+    DDRD &= ~(1 << PD2); // Clear bit to set PD2 as input
+}
+
+uint8 PIR_getState(void)
+{
+    /* Read the state of the PIR sensor pin (PD2) */
+    if (PIND & (1 << PD2))
+    {
+        return 1; // Motion detected
+    }
+    else
+    {
+        return 0; // No motion detected
+    }
+}
+
+
+
